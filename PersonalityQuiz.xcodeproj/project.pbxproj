@@ -15,6 +15,7 @@
 		D36787B023F701C500D83E26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D36787AE23F701C500D83E26 /* LaunchScreen.storyboard */; };
 		D36787B823F73E2D00D83E26 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36787B723F73E2D00D83E26 /* QuestionViewController.swift */; };
 		D36787BA23F73E4F00D83E26 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36787B923F73E4F00D83E26 /* ResultsViewController.swift */; };
+		EBDF9E6923F8E4FD0055DD23 /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF9E6823F8E4FD0055DD23 /* QuestionData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D36787B123F701C500D83E26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D36787B723F73E2D00D83E26 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		D36787B923F73E4F00D83E26 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		EBDF9E6823F8E4FD0055DD23 /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				D36787B123F701C500D83E26 /* Info.plist */,
 				D36787B723F73E2D00D83E26 /* QuestionViewController.swift */,
 				D36787B923F73E4F00D83E26 /* ResultsViewController.swift */,
+				EBDF9E6823F8E4FD0055DD23 /* QuestionData.swift */,
 			);
 			path = PersonalityQuiz;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				D36787A823F701C400D83E26 /* IntroViewController.swift in Sources */,
 				D36787A423F701C400D83E26 /* AppDelegate.swift in Sources */,
 				D36787B823F73E2D00D83E26 /* QuestionViewController.swift in Sources */,
+				EBDF9E6923F8E4FD0055DD23 /* QuestionData.swift in Sources */,
 				D36787BA23F73E4F00D83E26 /* ResultsViewController.swift in Sources */,
 				D36787A623F701C400D83E26 /* SceneDelegate.swift in Sources */,
 			);
