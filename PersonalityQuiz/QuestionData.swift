@@ -8,16 +8,16 @@
 
 import Foundation
 
-struct QuestionData {
-    private let text: String
-    private let type: ResponseType
-    private let answers: [Answer]
+struct Question {
+    let text: String
+    let type: ResponseType
+    let answers: [Answer]
     
 }
 
 struct Answer {
-    private let text: String
-    private let type: AnimalType
+    let text: String
+    let type: AnimalType
 }
 
 enum ResponseType {
