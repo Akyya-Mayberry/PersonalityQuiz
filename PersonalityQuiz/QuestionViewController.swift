@@ -33,6 +33,7 @@ class QuestionViewController: UIViewController {
     
     var questionIndex = 0
     var questions: [Question]!
+    var selectedAnswers: [Answer] = []
     
     // MARK - Methods
     
@@ -76,9 +77,38 @@ class QuestionViewController: UIViewController {
         questionLabel.text = question.text
         questionProgressView.progress = Float(questionIndex) / Float(questions.count)
         
-        
     }
     
+    @IBAction func didTapSingleAnswerButton(_ sender: UIButton) {
+        
+        let answers = questions[questionIndex].answers
+        
+        switch true {
+        case sender == singleButton1:
+            selectedAnswers.append(answers[0])
+        case sender == singleButton2:
+            selectedAnswers.append(answers[1])
+        case sender == singleButton3:
+            selectedAnswers.append(answers[2])
+        case sender == singleButton4:
+            selectedAnswers.append(answers[3])
+        default:
+            break
+        }
+        
+        /* Alternative way to get answers
+         // match selected answer to an answer in
+         // the question's answer list
+         let selectedButtonAnswer = sender.currentTitle
+         for answer in answers {
+            if answer.text == selectedButtonAnswer {
+                selectedAnswers.append(answer)
+            }
+         }
+         */
+        
+        print("first question answer: \(selectedAnswers[0])")
+    }
 }
 
 // MARK - Extensions
