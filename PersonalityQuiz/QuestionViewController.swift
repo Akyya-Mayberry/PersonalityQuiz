@@ -67,15 +67,9 @@ class QuestionViewController: UIViewController {
       singleButton3.setTitle(answers[2].text, for: .normal)
       singleButton4.setTitle(answers[3].text, for: .normal)
     case .multiple:
-      multipleStackView.isHidden = false
-      multiLabel1.text = answers[0].text
-      multiLabel2.text = answers[1].text
-      multiLabel3.text = answers[2].text
-      multiLabel4.text = answers[3].text
+      updateMultipleStack(using: answers)
     case .ranged:
-      rangedStackView.isHidden = false
-      rangedLabel1.text = answers.first?.text
-      rangedLabel2.text = answers.last?.text
+      updateRangedStack(using: answers)
     }
     
     navigationItem.title = "Question #\(questionIndex + 1)"
@@ -163,6 +157,25 @@ class QuestionViewController: UIViewController {
       performSegue(withIdentifier: "ResultsSegue", sender: nil)
     }
   }
+  
+  func updateMultipleStack(using answers: [Answer]) {
+    multipleStackView.isHidden = false
+    multiLabel1.text = answers[0].text
+    multiLabel2.text = answers[1].text
+    multiLabel3.text = answers[2].text
+    multiLabel4.text = answers[3].text
+    multiSwitch1.isOn = false
+    multiSwitch2.isOn = false
+    multiSwitch3.isOn = false
+    multiSwitch4.isOn = false
+  }
+  
+  func updateRangedStack(using answers: [Answer]) {
+    rangedStackView.isHidden = false
+    rangedSlider.setValue(0.5, animated: true)
+    rangedLabel1.text = answers.first?.text
+    rangedLabel2.text = answers.last?.text
+  }
 }
 
 // MARK - Extensions
@@ -185,6 +198,14 @@ extension QuestionViewController {
                 Answer(text: "Cuddling", type: .rabbit),
                 Answer(text: "Swimming", type: .turtle),
                 Answer(text: "Eating", type: .dog)
+      ]),
+      Question(text: "Which animals do you like?",
+               type: .multiple,
+               answers: [
+                Answer(text: "Cat", type: .cat),
+                Answer(text: "Rabbit", type: .rabbit),
+                Answer(text: "Turtle", type: .turtle),
+                Answer(text: "Dog", type: .dog)
       ]),
       Question(text: "How much do you enjoy car rides?",
                type: .ranged,
