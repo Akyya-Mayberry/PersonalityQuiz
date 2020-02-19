@@ -34,6 +34,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet var rangedStackView: UIStackView!
     @IBOutlet var rangedLabel1: UILabel!
     @IBOutlet var rangedLabel2: UILabel!
+    @IBOutlet weak var rangedSlider: UISlider!
     
     var questionIndex = 0
     var questions: [Question]!
@@ -136,6 +137,16 @@ class QuestionViewController: UIViewController {
         print("first question answer: \(selectedAnswers)")
     }
     
+    @IBAction func didTapSubmitRangedAnswerButton() {
+        let answers = questions[questionIndex].answers
+        
+        let index = Int(round(rangedSlider.value *
+            Float(answers.count - 1)))
+        
+        selectedAnswers.append(answers[index])
+        print("first question answer: \(selectedAnswers)")
+    }
+    
 }
 
 // MARK - Extensions
@@ -162,10 +173,9 @@ extension QuestionViewController {
             Question(text: "How much do you enjoy car rides?",
                      type: .ranged,
                      answers: [
-                        Answer(text: "I love them", type: .dog),
                         Answer(text: "I dislike them", type: .cat),
                         Answer(text: "I get a little nervous", type: .rabbit),
-                        Answer(text: "I barely notice them", type: .turtle)
+                        Answer(text: "I barely notice them", type: .turtle),                     Answer(text: "I love them", type: .dog)
             ])
         ]
     }
