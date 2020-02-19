@@ -26,6 +26,10 @@ class QuestionViewController: UIViewController {
     @IBOutlet var multiLabel2: UILabel!
     @IBOutlet var multiLabel3: UILabel!
     @IBOutlet var multiLabel4: UILabel!
+    @IBOutlet var multiSwitch1: UISwitch!
+    @IBOutlet var multiSwitch2: UISwitch!
+    @IBOutlet var multiSwitch3: UISwitch!
+    @IBOutlet var multiSwitch4: UISwitch!
     
     @IBOutlet var rangedStackView: UIStackView!
     @IBOutlet var rangedLabel1: UILabel!
@@ -101,14 +105,37 @@ class QuestionViewController: UIViewController {
          // the question's answer list
          let selectedButtonAnswer = sender.currentTitle
          for answer in answers {
-            if answer.text == selectedButtonAnswer {
-                selectedAnswers.append(answer)
-            }
+         if answer.text == selectedButtonAnswer {
+         selectedAnswers.append(answer)
+         }
          }
          */
         
         print("first question answer: \(selectedAnswers[0])")
     }
+    
+    @IBAction func didTapSubmitMultipleAnswerButton() {
+        let answers = questions[questionIndex].answers
+        
+        if multiSwitch1.isOn {
+            selectedAnswers.append(answers[0])
+        }
+        
+        if multiSwitch2.isOn {
+            selectedAnswers.append(answers[1])
+        }
+        
+        if multiSwitch3.isOn {
+            selectedAnswers.append(answers[2])
+        }
+        
+        if multiSwitch4.isOn {
+            selectedAnswers.append(answers[3])
+        }
+        
+        print("first question answer: \(selectedAnswers)")
+    }
+    
 }
 
 // MARK - Extensions

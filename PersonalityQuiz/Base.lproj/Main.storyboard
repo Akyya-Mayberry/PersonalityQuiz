@@ -183,6 +183,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1b-T9-JOF">
                                         <rect key="frame" x="0.0" y="180" width="374" height="30"/>
                                         <state key="normal" title="Submit Answer"/>
+                                        <connections>
+                                            <action selector="didTapSubmitMultipleAnswerButton" destination="ljI-VF-aF5" eventType="touchUpInside" id="oza-Ks-Tjv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -250,6 +253,10 @@
                         <outlet property="multiLabel2" destination="Hgr-Qr-AGW" id="YxM-xS-SeH"/>
                         <outlet property="multiLabel3" destination="GSv-qC-amx" id="hyI-gf-ivu"/>
                         <outlet property="multiLabel4" destination="IrH-g7-lXy" id="asv-4P-aUY"/>
+                        <outlet property="multiSwitch1" destination="P6k-Uw-W8I" id="rdD-Op-pQJ"/>
+                        <outlet property="multiSwitch2" destination="oeW-4V-Wvh" id="TfC-3d-VQo"/>
+                        <outlet property="multiSwitch3" destination="Ttf-CC-0Yy" id="msu-ER-JyO"/>
+                        <outlet property="multiSwitch4" destination="DrV-pd-mwS" id="F5j-Ju-fZ9"/>
                         <outlet property="multipleStackView" destination="eqY-EX-Jsk" id="gLZ-G0-pqJ"/>
                         <outlet property="questionLabel" destination="gdJ-e6-E5U" id="aVY-6M-bYg"/>
                         <outlet property="questionProgressView" destination="Luj-WZ-HPR" id="vaE-qd-Us3"/>
