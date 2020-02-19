@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -88,7 +88,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XC1-Qe-wnR" userLabel="Multiple Choice Button Stack View">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XC1-Qe-wnR" userLabel="Single Stack View">
                                 <rect key="frame" x="20" y="331" width="46" height="180"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Kl-lk-bdB">
@@ -109,7 +109,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="eqY-EX-Jsk" userLabel="Multiple Selection Stack View">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="eqY-EX-Jsk" userLabel="Multiple Stack View">
                                 <rect key="frame" x="20" y="316" width="374" height="210"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MgJ-Wr-v6x" userLabel="Selection1 Stack View">
@@ -234,6 +234,21 @@
                     </view>
                     <navigationItem key="navigationItem" id="wFX-Li-zkb"/>
                     <connections>
+                        <outlet property="multiLabel1" destination="tbu-Uc-QzR" id="hPY-Uw-tLG"/>
+                        <outlet property="multiLabel2" destination="Hgr-Qr-AGW" id="YxM-xS-SeH"/>
+                        <outlet property="multiLabel3" destination="GSv-qC-amx" id="hyI-gf-ivu"/>
+                        <outlet property="multiLabel4" destination="IrH-g7-lXy" id="asv-4P-aUY"/>
+                        <outlet property="multipleStackView" destination="eqY-EX-Jsk" id="gLZ-G0-pqJ"/>
+                        <outlet property="questionLabel" destination="gdJ-e6-E5U" id="aVY-6M-bYg"/>
+                        <outlet property="questionProgressView" destination="Luj-WZ-HPR" id="vaE-qd-Us3"/>
+                        <outlet property="rangedLabel1" destination="jjS-M1-HwO" id="r2w-an-uHQ"/>
+                        <outlet property="rangedLabel2" destination="epO-Oe-L1s" id="0A6-J0-cyh"/>
+                        <outlet property="rangedStackView" destination="PiH-n3-6a9" id="hXJ-kj-4sM"/>
+                        <outlet property="singleButton1" destination="8Kl-lk-bdB" id="Phn-dq-VJA"/>
+                        <outlet property="singleButton2" destination="UcO-FY-Yge" id="0C0-Ph-V50"/>
+                        <outlet property="singleButton3" destination="G65-dh-Igq" id="n3S-mq-guy"/>
+                        <outlet property="singleButton4" destination="WB6-2o-PVb" id="qCj-W5-N1K"/>
+                        <outlet property="singleStackView" destination="XC1-Qe-wnR" id="asK-vF-WR5"/>
                         <segue destination="hqA-CO-dRa" kind="show" identifier="ResultsSegue" id="dJe-Pt-QVg"/>
                     </connections>
                 </viewController>

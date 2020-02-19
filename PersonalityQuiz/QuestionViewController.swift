@@ -10,22 +10,74 @@ import UIKit
 
 class QuestionViewController: UIViewController {
     
+    // MARK - Properties
+    
+    @IBOutlet weak var questionProgressView: UIProgressView!
+    @IBOutlet weak var questionLabel: UILabel!
+    
+    @IBOutlet var singleStackView: UIStackView!
+    @IBOutlet var singleButton1: UIButton!
+    @IBOutlet var singleButton2: UIButton!
+    @IBOutlet var singleButton3: UIButton!
+    @IBOutlet var singleButton4: UIButton!
+    
+    @IBOutlet var multipleStackView: UIStackView!
+    @IBOutlet var multiLabel1: UILabel!
+    @IBOutlet var multiLabel2: UILabel!
+    @IBOutlet var multiLabel3: UILabel!
+    @IBOutlet var multiLabel4: UILabel!
+    
+    @IBOutlet var rangedStackView: UIStackView!
+    @IBOutlet var rangedLabel1: UILabel!
+    @IBOutlet var rangedLabel2: UILabel!
+    
+    var questionIndex = 0
+    var questions: [Question]!
+    
+    // MARK - Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        questions = generateQuestions(3)
+        updateUI()
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func updateUI() {
+        
+        singleStackView.isHidden = true
+        multipleStackView.isHidden = true
+        rangedStackView.isHidden = true
+        
+        let question = questions[questionIndex]
+        let answers = question.answers
+        
+        switch question.type {
+        case .single:
+            singleStackView.isHidden = false
+            singleButton1.setTitle(answers[0].text, for: .normal)
+            singleButton2.setTitle(answers[1].text, for: .normal)
+            singleButton3.setTitle(answers[2].text, for: .normal)
+            singleButton4.setTitle(answers[3].text, for: .normal)
+        case .multiple:
+            multipleStackView.isHidden = false
+            multiLabel1.text = answers[0].text
+            multiLabel2.text = answers[1].text
+            multiLabel3.text = answers[2].text
+            multiLabel4.text = answers[3].text
+        case .ranged:
+            rangedStackView.isHidden = false
+            rangedLabel1.text = answers.first?.text
+            rangedLabel2.text = answers.last?.text
+        }
+        
+        navigationItem.title = "Question #\(questionIndex + 1)"
+        questionLabel.text = question.text
+        questionProgressView.progress = Float(questionIndex) / Float(questions.count)
+        
+        
+    }
     
 }
 
