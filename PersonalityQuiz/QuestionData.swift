@@ -27,7 +27,7 @@ enum ResponseType {
 enum AnimalType: Character {
     case dog = "🐶", cat = "🐱", rabbit = "🐰", turtle = "🐢"
     
-    private var definition: String {
+    var definition: String {
         switch self {
         case .dog:
             return "You like barking"
